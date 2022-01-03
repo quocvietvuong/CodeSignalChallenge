@@ -51,12 +51,11 @@ char* reverseInParentheses(char* inputString) {
         {
             inputString[k] = innerString[l++];
         }
+        free(innerString);
         l = j+1;
         while (l < strLength) 
         {
-            inputString[k] = inputString[l];
-            k++;
-            l++;
+            inputString[k++] = inputString[l++];
         }
         inputString[k] = '\0';
         return reverseInParentheses(inputString);
